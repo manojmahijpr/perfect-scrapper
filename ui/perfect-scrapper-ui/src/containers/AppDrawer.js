@@ -32,6 +32,7 @@ import * as Actions from '../Actions/Actions'
 
 import {styles} from '../styles/AppDrawerStyles'
 import SearchTrends from '../Pages/SearchTrends';
+import Entertain from '../Pages/Entertain';
 
 class AppDrawer extends React.Component {
   
@@ -153,6 +154,7 @@ class AppDrawer extends React.Component {
               <Route path="/tech" component={Tech}/>
               <Route path="/ecommerce" component={ECommerce}/>
               <Route path="/search-trends" component={SearchTrends}/>
+              <Route path="/entertain" component={Entertain}/>
           </Switch>
         </main>
       </div>
