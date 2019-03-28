@@ -55,7 +55,7 @@ class AppDrawer extends React.Component {
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
-          color='secondary'
+          color='primary'
           position="fixed"
           className={classNames(classes.appBar, {
             [classes.appBarShift]: this.state.open,

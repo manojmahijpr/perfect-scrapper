@@ -19,7 +19,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    flexWrap: 'nowrap',
+    // flexWrap: 'nowrap',
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
   },
@@ -35,11 +35,25 @@ const styles = theme => ({
   },
 });
 
+
 const CardList = (props) => {
   const { classes } = props;
+
+  console.log(props.data);
+  
+  const data = props.data || [];
+
+
+  function gridElements() {
+    return data.map((cardData) => (
+      <GridListTile key={cardData.name} style={{color: 'red'}}>
+        <SimpleCard cardData={cardData}/>
+      </GridListTile>
+    ))
+  }
   
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="abcdef">
       <ListSubheader component="div">
       
         <span className={classes.sectionsName}>{props.sectionName}</span> 
@@ -47,15 +61,16 @@ const CardList = (props) => {
         {React.cloneElement(props.children, { size: 27 })}
       
       </ListSubheader>
-      <GridList className={classes.gridList} cols={3.5}>
-        
+      <GridList className={classes.gridList} cols={3}>
+        {
+          gridElements() 
+        }
         <GridListTile>
             <SimpleCard />
         </GridListTile>
         <GridListTile>
             <SimpleCard />
         </GridListTile>
-        
         <GridListTile>
             <SimpleCard />
         </GridListTile>

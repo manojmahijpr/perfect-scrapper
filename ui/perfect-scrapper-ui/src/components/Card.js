@@ -28,6 +28,9 @@ function SimpleCard(props) {
   const { classes } = props;
   const bull = <span className={classes.bullet}>•</span>;
 
+  console.log(props.cardData);
+  
+
   return (
     <Card className={classes.card}>
       <CardContent>
