@@ -15,13 +15,15 @@ const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-    overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
+    
   },
   gridList: {
     // flexWrap: 'nowrap',
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
+    overflowY: 'auto',
+    cellHeight: 'auto'
   },
   title: {
     color: theme.palette.primary.light,
@@ -38,46 +40,47 @@ const styles = theme => ({
 
 const CardList = (props) => {
   const { classes } = props;
-
-  console.log(props.data);
-  
   const data = props.data || [];
 
 
-  function gridElements() {
-    return data.map((cardData) => (
-      <GridListTile key={cardData.name} style={{color: 'red'}}>
-        <SimpleCard cardData={cardData}/>
-      </GridListTile>
-    ))
+  function gridCardElements() {
+    return data.map((cardData, i) => {
+      return (
+        <GridListTile key={i} style={{color: 'red'}}>
+          <SimpleCard cardData={cardData}/>
+        </GridListTile>
+      )
+    })
   }
   
   return (
     <div className={classes.root} id="abcdef">
       <ListSubheader component="div">
       
-        <span className={classes.sectionsName}>{props.sectionName}</span> 
-          &nbsp; &nbsp; 
-        {React.cloneElement(props.children, { size: 27 })}
-      
-      </ListSubheader>
-      <GridList className={classes.gridList} cols={3}>
-        {
-          gridElements() 
-        }
-        <GridListTile>
-            <SimpleCard />
-        </GridListTile>
-        <GridListTile>
-            <SimpleCard />
-        </GridListTile>
-        <GridListTile>
-            <SimpleCard />
-        </GridListTile>
+        <button 
+          className={classes.sectionsName} 
+          style={{
+            padding: 0,
+            border: 'none',
+            background: 'none',
+            cursor: 'pointer'
+          }}>
+            {props.sectionName}
+          </button> 
         
-        <GridListTile>
-            <SimpleCard />
-        </GridListTile>
+        {props.children && React.cloneElement(props.children, { size: 27 })}
+      </ListSubheader>
+      
+      <GridList
+        className={classes.gridList} 
+        cols={3}
+        cellHeight={'auto'}
+        padding={1}
+      >
+        {
+          gridCardElements() 
+        }
+        
       </GridList>
     </div>
   );

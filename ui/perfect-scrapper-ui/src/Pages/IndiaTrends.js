@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Facebook from '../components/Social/Facebook';
-import Reddit from '../components/Social/Reddit';
-import Twitter from '../components/Social/Twitter';
-import { FaFacebookF } from 'react-icons/fa';
+import TheHindu from '../components/IndiaTrendings/TheHindu';
+import TheTimesOfIndia from '../components/IndiaTrendings/TheTimesOfIndia';
+import GoogleNewsIndia from '../components/IndiaTrendings/GoogleNewsIndia';
 
 
 const styles = theme => ({
@@ -18,32 +17,31 @@ const styles = theme => ({
       textAlign: 'center',
       color: theme.palette.text.secondary,
     },
-  });
+});
   
 
 
-class Social extends Component {
+class IndiaTrends extends Component {
     render () {
         const { classes } = this.props;
         return (
             <Grid container spacing={24}>
-                {/* Facebook */}
-                {/* <Grid item xs={12}>
-                
-                    <Paper className={classes.paper}>
-                        <Facebook/>
-                    </Paper>
-            
-                </Grid> */}
                 <Grid item xs={12}>
                 
                     <Paper className={classes.paper}>
-                        <Twitter />
+                        <TheHindu/>
+                    </Paper>
+            
+                </Grid>
+                <Grid item xs={12}>
+                
+                    <Paper className={classes.paper}>
+                        <TheTimesOfIndia />
                     </Paper>
                 </Grid>
                 <Grid item xs={12}>
                     <Paper className={classes.paper}>
-                        <Reddit />
+                        <GoogleNewsIndia />
                     </Paper>
                 </Grid>
                 
@@ -52,8 +50,8 @@ class Social extends Component {
     }
 }
 
-Social.propTypes = {
+IndiaTrends.propTypes = {
     classes: PropTypes.object.isRequired,
   };
   
-export default withStyles(styles)(Social);
+export default withStyles(styles)(IndiaTrends);

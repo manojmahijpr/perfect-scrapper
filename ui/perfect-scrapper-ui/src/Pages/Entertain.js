@@ -14,9 +14,11 @@ const styles = theme => ({
       flexGrow: 1,
     },
     paper: {
-      padding: theme.spacing.unit * 2,
+      padding: theme.spacing.unit * 1,
       textAlign: 'center',
       color: theme.palette.text.secondary,
+      width: '100%',
+      height: '100%',
     },
   });
   
@@ -37,11 +39,11 @@ class Entertain extends Component {
                       <Musixmatch />
                   </Paper>
                 </Grid>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
                   <Paper className={classes.paper}>
                       <Games />
                   </Paper>
-                </Grid>
+                </Grid> */}
                 
             </Grid>
         )

@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import twitter_data, github_data
+from .views import twitter_data, stackoverflow_data
 
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
     path('twitter-data/', twitter_data),
-    path('github-data/', github_data),
+    path('stackoverflow-data/', stackoverflow_data),
+    
 ]

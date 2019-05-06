@@ -31,6 +31,9 @@ export const styles = theme => ({
       flexShrink: 0,
       whiteSpace: 'nowrap',
     },
+    grow: {
+      flexGrow: 1,
+    },
     drawerOpen: {
       width: drawerWidth,
       transition: theme.transitions.create('width', {
@@ -58,6 +61,8 @@ export const styles = theme => ({
     },
     content: {
       flexGrow: 1,
+      flexDirection: 'column',
+      overflow: 'hidden',
       padding: theme.spacing.unit * 3,
     },
     pageName: {

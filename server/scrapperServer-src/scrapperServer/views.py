@@ -1,15 +1,9 @@
 from django.shortcuts import render
 
 from django.http import JsonResponse
+from stackapi import StackAPI
 
 import tweepy
-
-def github_data(request):
-    context = {
-        'title': 'Title here',
-        'desc': 'Gives desc'
-    }
-    return JsonResponse(context)
 
 def twitter_data(request):
 
@@ -31,5 +25,14 @@ def twitter_data(request):
 
     context = {
         'trends': trends,
+    }
+    return JsonResponse(context)
+
+
+def stackoverflow_data(request):
+    SITE = StackAPI('stackoverflow')
+    questions = SITE.fetch('questions', page=1, pagesize=2, order='desc', sort='week')
+    context = {
+        'questions': questions,
     }
     return JsonResponse(context)

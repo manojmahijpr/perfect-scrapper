@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Facebook from '../components/Social/Facebook';
-import Reddit from '../components/Social/Reddit';
-import Twitter from '../components/Social/Twitter';
-import { FaFacebookF } from 'react-icons/fa';
-
+import TheWSJ from '../components/USHeadlines/TheWSJ';
+import TheWashingtonPost from '../components/USHeadlines/TheWashingtonPost';
+import BBC from '../components/USHeadlines/BBC';
 
 const styles = theme => ({
     root: {
@@ -18,32 +16,31 @@ const styles = theme => ({
       textAlign: 'center',
       color: theme.palette.text.secondary,
     },
-  });
+});
   
 
 
-class Social extends Component {
+class GlobalTrends extends Component {
     render () {
         const { classes } = this.props;
         return (
             <Grid container spacing={24}>
-                {/* Facebook */}
-                {/* <Grid item xs={12}>
-                
-                    <Paper className={classes.paper}>
-                        <Facebook/>
-                    </Paper>
-            
-                </Grid> */}
                 <Grid item xs={12}>
                 
                     <Paper className={classes.paper}>
-                        <Twitter />
+                        <BBC/>
+                    </Paper>
+            
+                </Grid>
+                <Grid item xs={12}>
+                
+                    <Paper className={classes.paper}>
+                        <TheWashingtonPost />
                     </Paper>
                 </Grid>
                 <Grid item xs={12}>
                     <Paper className={classes.paper}>
-                        <Reddit />
+                        <TheWSJ />
                     </Paper>
                 </Grid>
                 
@@ -52,8 +49,8 @@ class Social extends Component {
     }
 }
 
-Social.propTypes = {
+GlobalTrends.propTypes = {
     classes: PropTypes.object.isRequired,
   };
   
-export default withStyles(styles)(Social);
+export default withStyles(styles)(GlobalTrends);

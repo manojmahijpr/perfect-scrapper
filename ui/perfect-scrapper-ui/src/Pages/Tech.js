@@ -42,12 +42,15 @@ class Tech extends Component {
                         <StackOverflow />
                     </Paper>
                 </Grid>
-                <Grid item xs={12}>
+
+                {/* Quora */}
+
+                {/* <Grid item xs={12}>
                     <Paper className={classes.paper}>
                         <Quora />
                     </Paper>
                 </Grid>
-                
+                 */}
             </Grid>
         )
     }
