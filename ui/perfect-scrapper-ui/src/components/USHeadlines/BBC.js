@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import CardList from '../CardList';
 import {repository} from '../../Actions/Actions'
 
-const TRENDIND_URL = '';
-const TOTAL = 6;
+const TRENDIND_URL = 'https://www.bbc.com/';
+const TOTAL = 9;
 const NEWS_API_KEY = 'b4ad1383874c4e229d295170f07f3d33';
 const SOURCE = 'bbc-news';
 
@@ -29,7 +29,7 @@ export default class BBC extends Component {
       //let description = githubData[i].description.length>21 ? githubData[i].description.substring(0,25) : githubData[i].description;
 
       bbcdata.push({
-        header: 'Author: ' + articles[i].author || 'BBC',
+        header: 'Author: ' + (articles[i].author || 'BBC'),
         title: 'Title: ' + articles[i].title,
         url: articles[i].url,
         imgUrl : articles[i].urlToImage,

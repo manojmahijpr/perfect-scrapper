@@ -4,7 +4,7 @@ import { FaTwitter } from 'react-icons/fa';
 import {repository} from '../../Actions/Actions'
 
 const IMAGE_URL = 'https://hmp.me/cknv';
-const TOTAL = 6;
+const TOTAL = 9;
 const TRENDING_URL = '';
 
 class Twitter extends Component {

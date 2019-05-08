@@ -3,14 +3,15 @@ import CardList from '../CardList';
 import {repository} from '../../Actions/Actions'
 
 const TRENDIND_URL = '';
-const TOTAL = 6;
+const TOTAL = 9;
 const NEWS_API_KEY = 'b4ad1383874c4e229d295170f07f3d33';
 const SOURCE = 'the-times-of-india';
 
 export default class TheTimesOfIndia extends Component {
 
   state = {
-    theTOIData: []
+    theTOIData: [],
+    toiStateData: [],
   }
 
   componentDidMount() {
@@ -23,18 +24,17 @@ export default class TheTimesOfIndia extends Component {
 
   setTOIData = (articles) => {
     var theTOIData = [];
-
+        
     for( let i=0; i<TOTAL; i++ ) {
-
-      //let description = githubData[i].description.length>21 ? githubData[i].description.substring(0,25) : githubData[i].description;
-
-      theTOIData.push({
-        header: 'Author: ' + (articles[i].author || 'TOI'),
-        title: 'Title: ' + articles[i].title,
-        url: articles[i].url,
-        imgUrl : articles[i].urlToImage,
-        description: 'Description: ' + articles[i].description,
-      })
+      if(articles && articles.length>5) {
+        theTOIData.push({
+          header: 'Author: ' + (articles[i] || 'TOI'),
+          title: 'Title: ' + articles[i].title,
+          url: articles[i].url,
+          imgUrl : articles[i].urlToImage,
+          description: 'Description: ' + articles[i].description,
+        })
+      }
     }
     repository.theTOIData = theTOIData;
     this.setState({theTOIData})

@@ -5,7 +5,7 @@ import {repository} from '../../Actions/Actions'
 
 const IMAGE_URL = 'https://github.githubassets.com/images/modules/open_graph/github-octocat.png';
 const TRNEDING_URL = 'https://github.com/trending';
-
+const TOTAL = 9;
 export default class Github extends Component {
 
   state = {
@@ -28,9 +28,7 @@ export default class Github extends Component {
     if(githubData.length <10)
       return;
 
-    for( let i=0; i<6; i++ ) {
-
-      let description = githubData[i].description.length>21 ? githubData[i].description.substring(0,25) : githubData[i].description;
+    for( let i=0; i<TOTAL; i++ ) {
 
       githubCardData.push({
         header: 'Author: ' + githubData[i].author,
@@ -38,7 +36,7 @@ export default class Github extends Component {
         url: githubData[i].url,
         imgUrl : IMAGE_URL,
         body: 'Stars: ' + githubData[i].stars,
-        description: 'Description: ' + description,
+        description: 'Description: ' + githubData[i].description,
         footer: 'lang: ' + githubData[i].language
       })
     }

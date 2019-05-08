@@ -58,6 +58,10 @@ const CardList = (props) => {
       <ListSubheader component="div">
       
         <button 
+          onClick={() => {
+            if(props.url && props.url !== '' )
+              window.location.href=props.url
+          }}
           className={classes.sectionsName} 
           style={{
             padding: 0,

@@ -5,7 +5,7 @@ import {repository} from '../../Actions/Actions'
 
 
 const YOUTUBE_API_KEY = 'AIzaSyCXM7o4ov9HZpaji6J1_7fds6uQFJXajkk';
-const TOTAL = 6;
+const TOTAL = 9;
 const TRENDING_URL = 'http://youtube.com/trending';
 class Youtube extends Component {
 

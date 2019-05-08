@@ -3,7 +3,7 @@ import CardList from '../CardList';
 import {repository} from '../../Actions/Actions'
 
 const TRENDIND_URL = '';
-const TOTAL = 6;
+const TOTAL = 9;
 const NEWS_API_KEY = 'b4ad1383874c4e229d295170f07f3d33';
 const SOURCE = 'google-news-in';
 

@@ -6,7 +6,7 @@ import {repository} from '../../Actions/Actions'
 const key = '022c8935032ce652976a3b012057523b';
 const IMAGE_URL = 'https://hmp.me/ckmu';
 const TRENDING_URL = '';
-const TOTAL = 6;
+const TOTAL = 9;
 
 
 class Musixmatch extends Component {
@@ -17,13 +17,12 @@ class Musixmatch extends Component {
 
     componentDidMount() {
 
-        fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=6&country=us&f_has_lyrics=1&apikey=${key}`)
+        fetch(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=${TOTAL}&country=us&f_has_lyrics=1&apikey=${key}`)
             .then(response => response.json())
             .then(data => {
                 this.setMusixMatchData(data.message.body.track_list);
             })
             .catch(err => console.log(err))
-
     }
 
     setMusixMatchData = (data) => {

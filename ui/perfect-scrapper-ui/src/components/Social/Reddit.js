@@ -5,7 +5,7 @@ import {repository} from '../../Actions/Actions'
 
 
 const TRENDING_URL = 'https://www.reddit.com/r/popular/top/';
-const TOTAL = 6;
+const TOTAL = 9;
 
 class Reddit extends Component {
 

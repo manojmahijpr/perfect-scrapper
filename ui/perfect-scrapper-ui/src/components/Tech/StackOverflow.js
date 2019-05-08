@@ -4,7 +4,7 @@ import { FaStackOverflow } from 'react-icons/fa';
 import {repository} from '../../Actions/Actions'
 
 const IMAGE_URL = 'https://hmp.me/ckmv';
-const TOTAL = 6;
+const TOTAL = 9;
 const TRENDING_URL = 'https://stackoverflowData.com/?tab=hot';
 
 export default class StackOverflow extends Component {

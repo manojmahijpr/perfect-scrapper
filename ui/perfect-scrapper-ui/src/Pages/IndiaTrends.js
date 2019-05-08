@@ -33,12 +33,12 @@ class IndiaTrends extends Component {
                     </Paper>
             
                 </Grid>
-                <Grid item xs={12}>
+                {/* <Grid item xs={12}>
                 
                     <Paper className={classes.paper}>
                         <TheTimesOfIndia />
                     </Paper>
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12}>
                     <Paper className={classes.paper}>
                         <GoogleNewsIndia />
